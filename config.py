@@ -1,5 +1,6 @@
 # config.py
 
+
 def get_default_parameters():
     return {
 
@@ -9,7 +10,7 @@ def get_default_parameters():
         # =============================
         # CONFIRMAÇÃO ESTRUTURAL
         # =============================
-        "trend_confirmation": 5,
+        "trend_confirmation": 11,
 
         # =============================
         # FILTROS (DESLIGADOS)
@@ -68,4 +69,9 @@ def get_default_parameters():
         # =============================
         "daily_target": 300,
         "daily_stop": 500,
+
+        # =============================
+        # SESSÃO
+        # =============================
+        "min_entry_hour": 10,
     }

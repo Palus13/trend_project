@@ -107,8 +107,7 @@ class ExecutionEngine:
 
                     if trend != 0 and check_filters(self.df, i, self.params):
 
-                        # 🔥 NOVA REGRA: NÃO OPERAR ANTES DAS 10h
-                        if current_hour >= 10:
+                        if current_hour >= self.params["min_entry_hour"]:
 
                             self.position = trend
                             self.entry_price = row["close"]
@@ -122,8 +121,7 @@ class ExecutionEngine:
 
                         if trading_allowed:
 
-                            # Aplicar filtro horário também nas reversões
-                            if current_hour >= 10:
+                            if current_hour >= self.params["min_entry_hour"]:
                                 self.position = trend
                                 self.entry_price = row["close"]
                                 self.entry_row = row
